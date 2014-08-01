@@ -1,0 +1,3 @@
+Like almost everything else in this repository, this a component being developed for the Uranium City History project. For the moment, I am following the Interactive Google Maps tutorial on tutsplus: https://courses.tutsplus.com/courses/custom-interactive-maps-with-the-google-maps-api
+
+The eventual goal will be a map of Uranium City and area, with popup links and images from key places in and around the town, to illustrate the history of the town and the area. 
