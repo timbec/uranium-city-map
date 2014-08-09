@@ -11,6 +11,13 @@
 			} else {
 				return this.gMap.getZoom(); 
 			}
+		}, 
+		_on: function(event, callback) {
+			//calls 'this' before function - so it will be Mapster
+			var self = this; 
+			google.maps.event.addListener(this.gMap, 'click', function(e) {
+				callback.call(self, e); 
+			});  
 		}
 	}; 
 		return Mapster; 
