@@ -9,3 +9,8 @@ body {
 #map-canvas {
   height: 100%;
 }
+
+.info-box {
+	height: 50px; 
+	width: 150px; 
+}

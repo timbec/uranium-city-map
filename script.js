@@ -8,14 +8,29 @@
 
   // map.addMarker(59.556325, -108.614444); 
 
-  map.addMarker({
+  var marker = map.addMarker({
   	lat: 59.556325, 
   	lng: -108.614444, 
   	draggable: true, 
   	visible: true,
+  	id: 'marker-1',
+  	content: "<div class='info-box'>You are in Martin Lake</div>", 
   	icon: "http://uraniumcity-history.com/wp-content/themes/uc-history-video/images/atomic-symbol.png"
-  })
+  }); 
+
+  var marker2 = map.addMarker({
+  	lat: 59.570325, 
+  	lng: -108.615554, 
+  	draggable: true, 
+  	visible: true,
+  	id: 'marker-2',
+  	content: "<div class='info-box'>You are in Uranium City</div>", 
+  	icon: "http://uraniumcity-history.com/wp-content/themes/uc-history-video/images/atomic-symbol.png"
+  }); 
+  
   map.zoom(14); 
+
+  
   //alert(map.zoom()); 
 
   // map._on('click', function(e) {
