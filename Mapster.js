@@ -18,6 +18,18 @@
 			google.maps.event.addListener(this.gMap, 'click', function(e) {
 				callback.call(self, e); 
 			});  
+		}, 
+
+		addMarker: function(opts) {
+			opts.position = {
+				lat: opts.lat, 
+				lng: opts.lng
+			}
+			this._createMarker(opts); 
+		}, 
+		_createMarker: function(opts) {
+			opts.map = this.gMap; 
+			return new google.maps.Marker(opts); 
 		}
 	}; 
 		return Mapster; 
