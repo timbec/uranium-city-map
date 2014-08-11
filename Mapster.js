@@ -3,6 +3,7 @@
 	var Mapster = (function() {
 		function Mapster(element, opts) {
 			this.gMap = new google.maps.Map(element, opts); 
+			this.markers = []; 
 		}
 		Mapster.prototype = {
 			zoom: function(level) {
@@ -27,6 +28,7 @@
 				lng: opts.lng
 			}
 			marker = this._createMarker(opts);
+			this._addMarker(marker); 
 			if (opts.event) {
 				this._on({
 					obj: marker, 
@@ -34,7 +36,7 @@
 					callback: opts.event.callback
 				}); 
 			}
-			
+
 			if (opts.content) {
 				this._on({
 					obj: marker, 
@@ -48,6 +50,26 @@
 				}); 
 			} 
 		}, 
+		_addMarker: function(marker) {
+			this.markers.push(marker); 
+		},
+		_removeMarker: function() {
+			var indexOf = this.markers.indexOf(marker); 
+			if (indexOf != -1) {
+				this.markers.splice(indexOf, 1); 
+				marker.setMap(null); 
+			}
+		}, 
+		findMarkerByLat: function(lat) {
+			for (var i=0; i < this.markers.length; i++) {
+				var marker = this.markers[i]; 
+				console.log(marker); 
+				if(marker.position.lat() === lat) {
+					return marker; 
+				}
+
+			}
+		},
 		_createMarker: function(opts) {
 			opts.map = this.gMap; 
 			return new google.maps.Marker(opts); 

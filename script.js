@@ -30,7 +30,14 @@
   
   map.zoom(14); 
 
-  
+
+var found = map.findMarkerByLat(59.570325); 
+
+console.log(found); 
+
+  //console.log(marker2); 
+
+  //console.log(map.markers);
   //alert(map.zoom()); 
 
   // map._on('click', function(e) {
