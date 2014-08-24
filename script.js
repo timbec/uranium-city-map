@@ -30,40 +30,28 @@
   
   map.zoom(14); 
 
+  /*Single Responsibility Principle: 
+  A responsiblity is anything that has a tendency to change. 
+  How we manage collection is dynamic and so can change. 
 
-var found = map.findMarkerByLat(59.570325); 
+  Let's create a module that can manage any type of object in a collection. 
+  */
 
-console.log(found); 
 
-  //console.log(marker2); 
+//   var found = map.findBy(function(marker) {
+//     return marker.id === 'marker-2'; 
+//   });
+// console.log(found);
 
-  //console.log(map.markers);
-  //alert(map.zoom()); 
+  map.removeBy(function(marker) {
+    return marker.id === 'marker-2'; 
+  }); 
 
-  // map._on('click', function(e) {
-  // 	alert('click'); 
-  // 	console.log(e);
-  // 	console.log(this); 
+  // var randomArr = [1,2,3]; 
+
+  // randomArr.forEach(function(item) {
+  //   alert(item);
   // }); 
-
-  // var marker = new google.maps.Marker({
-  // 	position: {
-  // 	  lat: 59.556325,
-  //     lng: -108.614444
-  // 	}, 
-  // 	map:map.gMap, 
-  // 	icon: "http://uraniumcity-history.com/wp-content/themes/uc-history-video/images/atomic-symbol.png"
-  // }); 
-
-  //  var marker2 = new google.maps.Marker({
-  // 	position: {
-  // 	  lat: 59.5548325,
-  //     lng: -108.604444
-  // 	}, 
-  // 	map:map.gMap, 
-  // 	icon: "http://uraniumcity-history.com/wp-content/themes/uc-history-video/images/atomic-symbol.png"
-  // }); 
-
-  // console.log(marker2); 
+ 
   
 }(window, google, window.Mapster));
